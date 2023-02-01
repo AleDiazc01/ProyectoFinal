@@ -12,6 +12,10 @@
     display: inline;
 }
 
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
 #menu {
     position: absolute;
     top: 8%;
@@ -19,16 +23,16 @@
     height: 4%;
     width: 100%;
     background-color: black;
-    color: white;  
+    color: white;
 }
 #menu a {
     background-color: red;
-    color: black;  
+    color: black;
 }
 
 #menu a:over {
     background-color: green;
-    color: white;  
+    color: white;
 }
 
 #barralateral {
@@ -38,7 +42,7 @@
     height: 81%;
     width: 20%;
     background-color: #00FFA0;
-    padding: 10px;  
+    padding: 10px;
 }
 
 #contenido {
@@ -48,32 +52,89 @@
     height: 81%;
     width: 80%;
     background-color: #7901A0;
-    padding: 10px; 
+    padding: 10px;
     overflow: auto;
 }
 
 #piedepagina {
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: 0px;
     left: 0;
-    height: 4%;
+    height: 40px;
     width: 100%;
-    background-color: #AABB00;
+    background-color: black;
+    color: white;
     text-align: center;
 }
 
 #encabezadotabla {
-        background-color: blue;
-        color: white
+    background-color: blue;
+    color: white
 
 }
 
 #tablaresumen tr:nth-child(odd){
     background-color: coral;
-        color: blue;
+    color: blue;
 }
 
 #tablaresumen tr:nth-child(even){
     background-color: white;
-        color: red;
+    color: red;
+}
+
+.textocentrado {
+    text-align: center;
+}
+
+.textoderecha {
+    text-align: right;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: green;
+}
+tbody tr:nth-child(even) {
+    background-color: whitesmoke;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+
+}
+
+.nav-menu {
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+}
+
+.nav-menu-item{
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 90px;
+}
+
+.nav-menu-link{
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.nav-menu-link:hover{
+    background-color: grey;
+    transition: 0.5s;
+    font-size: 24px;
 }

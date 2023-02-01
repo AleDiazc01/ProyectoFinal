@@ -6,17 +6,28 @@
         <meta name="description" content="Esta pagina contiene etiquetas de tipo HTML5 y luego enlaces con definicion de estilos css">
         <meta name="keywords" content="HTML5, css3, web, fidelitas">
     </head>
-    <body>
+    <body style="background-color: cyan">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
         <header id="encabezado">
-            <h1>TechShop</h1>
-        </header>
-        <nav id="menu">
-            <a href="ejemplo9.html">Back </a>
-            <a href="index.html">Home </a>
-            <a href="ejemplo2.html">Next</a><br>
-            <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
-        </nav>
 
+
+            <nav class="nav">
+                <a href="index.html" class="logo nav-link">TechShop</a>
+
+                <ul class="nav-menu">
+
+                    <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="ejemplo9.html">&LeftTriangleBar; </a></li>
+                    <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="ejemplo2.html">&RightTriangleBar;</a><br></li>
+                    <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="audios.html">audios</a></li>                
+                    <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="videos.html">videos</a></li>
+                    <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="iframe.html">ifrane</a></li>
+                    <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="form.html">form</a></li>
+                </ul> 
+
+
+
+            </nav>
+        </header>
         <aside id="barralateral">
             <h2 style="text-align: center">Home</h2>
             <p>Cras ac gravida nisl, nec maximus turpis. Aenean nec risus augue. Quisque vitae massa viverra, viverra est nec, ultrices dui. Curabitur quis urna enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean lobortis est sed dictum eleifend. Quisque fringilla dictum dui a finibus. In tempor erat vitae scelerisque consectetur.</p>
@@ -89,6 +100,53 @@
                     </tbody>
                 </table>
 
+            </article>
+            <article>
+                <header>
+                    <h3>Lista de productos</h3>
+                </header><table border="0">
+                    <thead>
+                        <tr>
+                            <th class="textocentrado">codigo</th>
+                            <th>nombre</th>
+                            <th class="textoderecha">precio</th>
+                            <th class="textocentrado">cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="textocentrado">1</td>
+                            <td>portatil hp 535</td>
+                            <td class="textoderecha">450.000</td>
+                            <td class="textocentrado">4</td>
+                        </tr>
+                        <tr>
+                            <td class="textocentrado">2</td>
+                            <td>celular samsung 5</td>
+                            <td class="textoderecha">800.000</td>
+                            <td class="textocentrado">6</td>
+                        </tr>
+                        <tr>
+                            <td class="textocentrado">3</td>
+                            <td>cargador dell</td>
+                            <td class="textoderecha">35.000</td>
+                            <td class="textocentrado">8</td>
+                        </tr>
+                        <tr>
+                            <td class="textocentrado">4</td>
+                            <td>parlante jbl</td>
+                            <td class="textoderecha">50.000</td>
+                            <td class="textocentrado">2</td>
+                        </tr>
+                        <tr>
+                            <td class="textocentrado">5</td>
+                            <td>televisor sony</td>
+                            <td class="textoderecha">600.000</td>
+                            <td class="textocentrado">5</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
             </article>
         </section>
 

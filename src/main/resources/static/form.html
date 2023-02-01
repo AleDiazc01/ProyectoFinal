@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Tienda en linea</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Esta pagina contiene etiquetas de tipo HTML5 y luego enlaces con definicion de estilos css">
+    <meta name="keywords" content="HTML5, css3, web, fidelitas">
+</head>
+
+
+
+
+
+
+
+<section>
+
+
+    <h2>formulario</h2>
+    <article>
+        <header>
+            <h3>registro</h3>
+        </header>
+        <form action="/cliente/registro.jsp" method="POST">
+
+            <input type="hidden" name="codigo" value="1"/>
+
+            <fieldset>
+                <label>Nombre</label>
+                <input type="text" name="Nombre" value="" size="30" />
+            </fieldset>
+
+            <fieldset>
+                <label>clave</label>
+                <input type="password" name="Clave" value="" size="10" />
+            </fieldset>
+
+            <fieldset>
+                <label>Direccion</label><textarea name="direccion" rows="4" cols="40">
+                </textarea>
+            </fieldset>
+
+            <fieldset>
+                <label>nivel educativo</label>
+                <select name="nivel">
+                    <option>escolar</option>
+                    <option>secundaria</option>
+                    <option>universitaria</option>
+                </select>
+                <br>
+                <label>deportes</label>
+                futbol<input type="checkbox" name="futbol" value="ON" />
+                baloncesto<input type="checkbox" name="baloncesto" value="ON" />
+                tenis<input type="checkbox" name="tenis" value="ON" />
+                <br>
+                <label>visa americana</label>
+                si<input type="radio" name="visa" value="si" />
+                no<input type="radio" name="visa" value="no" />
+            </fieldset>
+            <input type="submit" value="enviar" />
+        </form>
+    </article>
+
+
+
+
+
+</section>
+
+
+
+<footer id="piedepagina">
+    <p>Derechos reservados &copy;2022 <address style="display: inline">tel 8889-9230</address> 
+</footer>
+
+
+
