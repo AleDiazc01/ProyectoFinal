@@ -17,14 +17,32 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Laboratorios
  */
 @Service
-public class ClienteServiceImpl implements ClienteService{
-    
+public class ClienteServiceImpl implements ClienteService {
+
     @Autowired
     private ClienteDao clienteDao;
 
     @Override
-    @Transactional(readOnly=true)
+    @Transactional(readOnly = true)
     public List<Cliente> getCliente() {
-       return clienteDao.findAll();
+        return clienteDao.findAll();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Cliente getCliente(Cliente cliente) {
+        return clienteDao.findById(cliente.getIdCliente()).orElse(null);
+    }
+
+    @Override
+    @Transactional
+    public void save(Cliente cliente) {
+        clienteDao.save(cliente);
+    }
+
+    @Override
+    @Transactional
+    public void delete(Cliente cliente) {
+        clienteDao.delete(cliente);
     }
 }
