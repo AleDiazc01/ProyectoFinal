@@ -1,10 +1,10 @@
-package com.tienda.domain;
+package com.DeLaCasa.domain;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-import com.tienda.service.ClienteService;
+import com.DeLaCasa.service.RecetaService;
 import java.util.Arrays;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +19,10 @@ import org.springframework.web.bind.annotation.PostMapping;
  */
 @Controller
 @Slf4j
-public class ClienteController {
+public class RecetaController {
 
     @Autowired
-    private ClienteService clienteService;
+    private RecetaService recetaService;
     
     @GetMapping("/")
     public String inicio(Model model) {
@@ -31,32 +31,32 @@ public class ClienteController {
         
        
        
-        var clientes =clienteService.getCliente();
-        model.addAttribute("clientes", clientes);
+        var recetas =recetaService.getReceta();
+        model.addAttribute("recetas", recetas);
         return "index";
     }
     
-     @GetMapping("/cliente/nuevo")
-    public String clienteNuevo(Cliente cliente) {
-        return "modifica_cliente";
+     @GetMapping("/receta/nuevo")
+    public String recetaNuevo(Receta receta) {
+        return "modifica_receta"; 
     }
     
-     @PostMapping("/cliente/guardar")
-    public String clienteGuardar(Cliente cliente) {
-        clienteService.save(cliente);
+     @PostMapping("/receta/guardar")
+    public String recetaGuardar(Receta receta) {
+        recetaService.save(receta);
         return "redirect:/";
     }
     
-         @GetMapping("/cliente/eliminar/{idCliente}")
-    public String clienteEliminar(Cliente cliente) {
-        clienteService.delete(cliente);
+         @GetMapping("/receta/eliminar/{idReceta}")
+    public String recetaEliminar(Receta receta) {
+        recetaService.delete(receta);
         return "redirect:/";
     }
     
-             @GetMapping("/cliente/modificar/{idCliente}")
-    public String clienteModificar(Cliente cliente, Model model) {
-            cliente= clienteService.getCliente(cliente);
-            model.addAttribute("cliente", cliente);
-        return "modifica_cliente";
+             @GetMapping("/receta/modificar/{idReceta}")
+    public String recetaModificar(Receta receta, Model model) {
+            receta= recetaService.getReceta(receta);
+            model.addAttribute("receta", receta);
+        return "modifica_receta";
     }
 }

@@ -2,25 +2,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package com.tienda.service;
+package com.DeLaCasa.service;
 
-import com.tienda.domain.Cliente;
+import com.DeLaCasa.domain.Receta;
 import java.util.List;
 
 /**
  *
  * @author Laboratorios
  */
-public interface ClienteService {
+public interface RecetaService {
     
     
     
     
-    public List<Cliente> getCliente();
+    public List<Receta> getReceta();
     
-    public Cliente getCliente(Cliente cliente);
+    public Receta getReceta(Receta receta);
     
-    public void save(Cliente cliente);
+    public void save(Receta receta);
     
-    public void delete(Cliente cliente);
+    public void delete(Receta receta);
 }

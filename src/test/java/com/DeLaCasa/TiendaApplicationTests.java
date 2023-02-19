@@ -1,10 +1,10 @@
-package com.tienda;
+package com.DeLaCasa;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TiendaApplicationTests {
+class DeLaCasaApplicationTests {
 
 	@Test
 	void contextLoads() {

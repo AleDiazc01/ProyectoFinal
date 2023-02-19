@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.tienda.domain;
+package com.DeLaCasa.domain;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
@@ -14,27 +14,27 @@ import lombok.Data;
  */
 @Data
 @Entity
-@Table(name="cliente")
-public class Cliente implements Serializable{
+@Table(name="receta")
+public class Receta implements Serializable{
 
     private static final long serialVersionUID =1L;
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idCliente;
+    private long idReceta;
     private String nombre;
-    private String apellidos;
-    private String correo;
-    private String telefono;
+    private String descripcion;
+    private String ingredientes;
+    private String preparacion;
 
-    public Cliente() {
+    public Receta() {
     }
 
-    public Cliente(String nombre, String apellidos, String correo, String telefono) {
+    public Receta(String nombre, String descripcion, String ingredientes, String preparacion) {
         this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.correo = correo;
-        this.telefono = telefono;
+        this.descripcion = descripcion;
+        this.ingredientes = ingredientes;
+        this.preparacion = preparacion;
     }
 
 }

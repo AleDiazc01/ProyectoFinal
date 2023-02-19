@@ -2,47 +2,47 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.tienda.service.impl;
+package com.DeLaCasa.service.impl;
 
-import com.tienda.dao.ClienteDao;
-import com.tienda.domain.Cliente;
-import com.tienda.service.ClienteService;
+import com.DeLaCasa.domain.Receta;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import com.DeLaCasa.dao.RecetaDao;
+import com.DeLaCasa.service.RecetaService;
 
 /**
  *
  * @author Laboratorios
  */
 @Service
-public class ClienteServiceImpl implements ClienteService {
+public class RecetaServiceImpl implements RecetaService {
 
     @Autowired
-    private ClienteDao clienteDao;
+    private RecetaDao recetaDao;
 
-    @Override
     @Transactional(readOnly = true)
-    public List<Cliente> getCliente() {
-        return clienteDao.findAll();
+    public List<Receta> getReceta() {
+        return recetaDao.findAll();
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Cliente getCliente(Cliente cliente) {
-        return clienteDao.findById(cliente.getIdCliente()).orElse(null);
+    public Receta getReceta(Receta receta) {
+        return recetaDao.findById(receta.getIdReceta()).orElse(null);
     }
 
     @Override
     @Transactional
-    public void save(Cliente cliente) {
-        clienteDao.save(cliente);
+    public void save(Receta receta) {
+        recetaDao.save(receta);
     }
 
     @Override
     @Transactional
-    public void delete(Cliente cliente) {
-        clienteDao.delete(cliente);
+    public void delete(Receta receta) {
+        recetaDao.delete(receta);
     }
+
 }

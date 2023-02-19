@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>TechShop</title>
@@ -11,29 +6,29 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <body>
         <header th:replace="layedout/plantilla :: header" />
         
-        <h2>Datos de clientes</h2>
+        <h2>Datos de la receta</h2>
         <hr>
         <a th:href="@{/}">Regresar</a>
          <hr>
         
-         <form th:action="@{/cliente/guardar}"
+         <form th:action="@{/receta/guardar}"
                method="post"
-               th:object="${cliente}">
-             <input type="hidden" name="idCliente" th:field="*{idCliente}"/>
+               th:object="${receta}">
+             <input type="hidden" name="idReceta" th:field="*{idReceta}"/>
              <label>Nombre</label>
              <input type="text" name="nombre" required="true" th:field="*{nombre}"/>
              <br>
              
-             <label>Apellidos</label>
-             <input type="text" name="apellidos" required="true" th:field="*{apellidos}"/>
+             <label>descripcion</label>
+             <input type="text" name="descripcion" required="true" th:field="*{descripcion}"/>
              <br>
              
-             <label>Correo</label>
-             <input type="email" name="correo" th:field="*{correo}"/>
+             <label>ingredientes</label>
+             <input type="text" name="ingredientes" th:field="*{ingredientes}"/>
              <br>
              
-             <label>Telefono</label>
-             <input type="tel" name="telefono" th:field="*{telefono}"/>
+             <label>preparacion</label>
+             <input type="text" name="preparacion" th:field="*{preparacion}"/>
              <br>
              <hr>
                  <input type="submit" value="guardar" name="guardar" />
