@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header th:replace="layedout/plantilla :: header" />
+        
+        <h2>Datos de la receta</h2>
+        <hr>
+        <a th:href="@{/}">Regresar</a>
+         <hr>
+         
+        <table border="0">
+    <thead>
+         
+         
+         <tr th:object="${receta}">
+            <th>nombre</th>
+            <th>descripcion</th>
+            <th>ingredientes</th>
+            <th>preparacion</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td>[[${receta.nombre}]]</td>
+            <td>[[${receta.descripcion}]]</td>
+            <td>[[${receta.ingredientes}]]</td>
+            <td>[[${receta.preparacion}]]</td>
+            
+            
+        </tr>
+    </tbody>
+</table>
+        
+
+    </body>
+            <footer th:replace="layedout/plantilla :: footer" />
+
+</html>

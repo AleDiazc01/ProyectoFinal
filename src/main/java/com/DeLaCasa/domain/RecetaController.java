@@ -23,40 +23,64 @@ public class RecetaController {
 
     @Autowired
     private RecetaService recetaService;
-    
+
     @GetMapping("/")
     public String inicio(Model model) {
-        var saludo = "Hola desde el back end";
-        model.addAttribute("variable", saludo);
-        
-       
-       
-        var recetas =recetaService.getReceta();
+        var recetas = recetaService.getReceta();
         model.addAttribute("recetas", recetas);
         return "index";
     }
-    
-     @GetMapping("/receta/nuevo")
+
+    @GetMapping("/receta/nuevo")
     public String recetaNuevo(Receta receta) {
-        return "modifica_receta"; 
+        return "modifica_receta";
     }
-    
-     @PostMapping("/receta/guardar")
+
+    @PostMapping("/receta/guardar")
     public String recetaGuardar(Receta receta) {
         recetaService.save(receta);
         return "redirect:/";
     }
-    
-         @GetMapping("/receta/eliminar/{idReceta}")
+
+    @GetMapping("/receta/eliminar/{idReceta}")
     public String recetaEliminar(Receta receta) {
         recetaService.delete(receta);
         return "redirect:/";
     }
-    
-             @GetMapping("/receta/modificar/{idReceta}")
+
+    @GetMapping("/receta/modificar/{idReceta}")
     public String recetaModificar(Receta receta, Model model) {
-            receta= recetaService.getReceta(receta);
-            model.addAttribute("receta", receta);
+        receta = recetaService.getReceta(receta);
+        model.addAttribute("receta", receta);
         return "modifica_receta";
+    }
+    
+        @GetMapping("/registro")
+    public String registro() {
+        return "registro";
+    }
+    
+            @GetMapping("/recetas_presentacion")
+    public String recetasPresntacion(Model model) {
+        var recetas = recetaService.getReceta();
+        model.addAttribute("recetas", recetas);
+        return "recetas_presentacion";
+    }
+    
+                @GetMapping("/sobre_web")
+    public String sobre() {
+        return "sobre_web";
+    }
+    
+                    @GetMapping("/iniciar_sesion")
+    public String iniciarSesion() {
+        return "iniciar_sesion";
+    }
+    
+        @GetMapping("/receta/mostrar/{idReceta}")
+    public String mostrarReceta(Receta receta, Model model) {
+        receta = recetaService.getReceta(receta);
+        model.addAttribute("receta", receta);
+        return "mostrar_receta";
     }
 }

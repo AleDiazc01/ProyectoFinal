@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>De La Casa Recetas</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+
+        <header th:replace="layedout/plantilla :: header" />
+        <nav>
+            <ul>                
+                                <li><a href="/">Inicio</a></li>
+                      <li><a href="/sobre_web">Acerca de</a></li>
+                      <li><a href="/registro">Registrarse</a></li>
+                      <li><a href="/iniciar_sesion">Iniciar sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <table border="0">
+        <thead>
+            <tr>
+                <th>nombre</th>
+                <th>descripcion</th>
+                <th>ingredientes</th>
+                <th>preparacion</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr th:each="recetas: ${recetas}">
+                <td>[[${recetas.nombre}]]</td>
+                <td>[[${recetas.descripcion}]]</td>
+                <td>[[${recetas.ingredientes}]]</td>
+                <td>[[${recetas.preparacion}]]</td>
+                <td>
+                    <a th:href="@{/receta/eliminar/} +${recetas.idReceta}">Eliminar</a>
+                </td>
+
+                <td>
+                    <a th:href="@{/receta/modificar/} +${recetas.idReceta}">Modificar</a>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+<footer th:replace="layedout/plantilla :: footer" />
+
+</html>

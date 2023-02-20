@@ -1,51 +1,56 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>De La Casa Recetas</title>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <header th:replace="layedout/plantilla :: header" />
-        <h2>Listado de recetas</h2>
-        <hr>
-        <a th:href="@{/receta/nuevo}">Nueva receta</a>
-        
-  
+  <head>
+    <title>De La Casa Recetas</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <header th:replace="layedout/plantilla :: header" />
+      <nav>
+        <ul>
+          <li><a href="/recetas_presentacion">Recetas</a></li>
+          <li><a href="/sobre_web">Acerca de</a></li>
+          <li><a href="/registro">Registrarse</a></li>
+          <li><a href="/iniciar_sesion">Iniciar sesion</a></li>
+          
+        </ul>
+      </nav>
 
-        <table border="0">
-            <thead>
-                <tr>
-                    <th>nombre</th>
-                    <th>descripcion</th>
-                    <th>ingredientes</th>
-                    <th>preparacion</th>
-                </tr>
-            </thead>
-            <tbody>
+    <main>
+        <h1>Bienvenido a De La Casa</h1>
+      <p>En De La Casa te ofrecemos una gran variedad de recetas de cocina para que puedas preparar deliciosos platos en casa. Desde platillos sencillos hasta recetas gourmet, aquí encontrarás todo lo que necesitas para impresionar a tus invitados.</p>
+      <p>Explora nuestras recetas y descubre nuevas formas de cocinar tus ingredientes favoritos. También puedes compartir tus propias recetas con la comunidad y recibir comentarios y sugerencias de otros chefs aficionados.</p>
+      <br>
+      <h2>Recetas Favoritas</h2>
+      <table border="0">
+    <thead>
+        <tr>
+            <th>nombre</th>
+            <th>descripcion</th>
+            <th>ingredientes</th>
+            <th>preparacion</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr th:each="recetas: ${recetas}">
+            <td><a th:href="@{/receta/mostrar/} +${recetas.idReceta}">[[${recetas.nombre}]]</a></td>
+            <td>[[${recetas.descripcion}]]</td>
+            <td>[[${recetas.ingredientes}]]</td>
+            <td>[[${recetas.preparacion}]]</td>
+            <td>
+                <a th:href="@{/receta/eliminar/} +${recetas.idReceta}">Eliminar</a>
+            </td>
+            
+            <td>
                 
-                <tr th:each="recetas: ${recetas}">
-                    <td>[[${recetas.nombre}]]</td>
-                    <td>[[${recetas.descripcion}]]</td>
-                    <td>[[${recetas.ingredientes}]]</td>
-                    <td>[[${recetas.preparacion}]]</td>
-                    <td>
-                        <a th:href="@{/receta/eliminar/} +${recetas.idReceta}">Eliminar</a>
-                    </td>
-                    
-                    <td>
-                        <a th:href="@{/receta/modificar/} +${recetas.idReceta}">Modificar</a>
-                    </td>
-                    
-                </tr>
-            </tbody>
-        </table>
-
-        
-    </body>
-            <footer th:replace="layedout/plantilla :: footer" />
-
+                <a th:href="@{/receta/modificar/} +${recetas.idReceta}">Modificar</a>
+            </td>
+            
+        </tr>
+    </tbody>
+</table>
+    </main>
+    <footer th:replace="layedout/plantilla :: footer" />
+  </body>
 </html>
