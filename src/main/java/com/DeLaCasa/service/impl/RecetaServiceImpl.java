@@ -11,11 +11,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.DeLaCasa.dao.RecetaDao;
 import com.DeLaCasa.service.RecetaService;
+import java.util.ArrayList;
 
-/**
- *
- * @author Laboratorios
- */
+
 @Service
 public class RecetaServiceImpl implements RecetaService {
 
@@ -31,6 +29,18 @@ public class RecetaServiceImpl implements RecetaService {
     @Transactional(readOnly = true)
     public Receta getReceta(Receta receta) {
         return recetaDao.findById(receta.getIdReceta()).orElse(null);
+    }
+    
+    @Transactional(readOnly = true)
+    public Receta buscarReceta(String palabra) {
+        List<Receta> lista = new ArrayList<>();
+        lista=recetaDao.findAll();
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).getNombre().equalsIgnoreCase(palabra)) {
+                return lista.get(i);
+            }
+        }
+        return null;
     }
 
     @Override

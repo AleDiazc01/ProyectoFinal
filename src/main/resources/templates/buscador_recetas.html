@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>De La Casa Recetas</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <header th:replace="layedout/plantilla :: header" />
+      <nav>
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recetas_presentacion">Recetas</a></li>
+          <li><a href="/sobre_web">Acerca de</a></li>
+          <li><a href="/registro">Registrarse</a></li>
+          <li><a href="/iniciar_sesion">Iniciar sesion</a></li>
+          
+        </ul>
+      </nav>
+
+    <main>
+        <form name="mostrar" th:action="@{/receta/buscar}">
+            <input type="text" name="buscador" value="" />
+            <input type="submit" value="buscar" name="buscar" />
+        </form>
+        
+    </main>
+    <footer th:replace="layedout/plantilla :: footer" />
+  </body>
+</html>

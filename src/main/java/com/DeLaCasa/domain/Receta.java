@@ -8,10 +8,7 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import lombok.Data;
 
-/**
- *
- * @author Laboratorios
- */
+
 @Data
 @Entity
 @Table(name="receta")
@@ -30,11 +27,14 @@ public class Receta implements Serializable{
     public Receta() {
     }
 
-    public Receta(String nombre, String descripcion, String ingredientes, String preparacion) {
+    public Receta(long idReceta, String nombre, String descripcion, String ingredientes, String preparacion) {
+        this.idReceta = idReceta;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.ingredientes = ingredientes;
         this.preparacion = preparacion;
     }
+
+
 
 }

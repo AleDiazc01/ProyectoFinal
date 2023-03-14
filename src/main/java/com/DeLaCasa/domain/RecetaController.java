@@ -4,6 +4,7 @@ package com.DeLaCasa.domain;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+import com.DeLaCasa.service.ClienteService;
 import com.DeLaCasa.service.RecetaService;
 import java.util.Arrays;
 import lombok.extern.slf4j.Slf4j;
@@ -22,12 +23,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class RecetaController {
 
     @Autowired
+
     private RecetaService recetaService;
+
 
     @GetMapping("/")
     public String inicio(Model model) {
         var recetas = recetaService.getReceta();
         model.addAttribute("recetas", recetas);
+
         return "index";
     }
 
@@ -55,10 +59,6 @@ public class RecetaController {
         return "modifica_receta";
     }
     
-        @GetMapping("/registro")
-    public String registro() {
-        return "registro";
-    }
     
             @GetMapping("/recetas_presentacion")
     public String recetasPresntacion(Model model) {
@@ -83,4 +83,32 @@ public class RecetaController {
         model.addAttribute("receta", receta);
         return "mostrar_receta";
     }
+    
+     
+    
+       @GetMapping("/registro")
+    public String registro() {
+        return "registro";
+    } 
+    
+    @GetMapping("/receta/buscador")
+    public String buscadorReceta(Model model) {
+        
+      
+        
+        return "buscador_recetas";
+    }
+    
+    @GetMapping("/receta/buscar")
+    public String buscarReceta(Model model, String buscar) {
+        
+      model.addAttribute(recetaService.buscarReceta(buscar));
+        
+        return "mostrar_receta";
+    }
+    
+    
+    
+
+    
 }

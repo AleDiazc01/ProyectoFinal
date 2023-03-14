@@ -7,10 +7,7 @@ package com.DeLaCasa.service;
 import com.DeLaCasa.domain.Receta;
 import java.util.List;
 
-/**
- *
- * @author Laboratorios
- */
+
 public interface RecetaService {
     
     
@@ -23,4 +20,6 @@ public interface RecetaService {
     public void save(Receta receta);
     
     public void delete(Receta receta);
+    
+    public Receta buscarReceta(String palabra);
 }
