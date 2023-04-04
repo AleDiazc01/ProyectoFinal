@@ -50,3 +50,12 @@ INSERT INTO recetasdecasa.receta (id_receta,id_cliente, nombre, descripcion, ing
 (3,2, 'Spaghetti a la Boloñesa', 'Una pasta italiana clásica con una salsa a base de carne de res, tomates y especias.', '1 paquete de spaghetti, 1/2 libra de carne molida, 1 lata de tomates pelados, 1 cebolla picada, 2 dientes de ajo picados, 1/4 taza de vino tinto, 1 cucharadita de orégano, 1 cucharadita de albahaca, Sal y pimienta', '1. Cocine la pasta según las instrucciones del paquete. 2. En una sartén, sofría la cebolla y el ajo en aceite hasta que estén dorados. 3. Agregue la carne molida y cocine hasta que esté dorada. 4. Agregue los tomates pelados, el vino tinto, el orégano y la albahaca. 5. Cocine a fuego medio hasta que la salsa espese. 6. Sirva la pasta con la salsa y queso parmesano rallado al gusto.'),
 (4,2, 'Tacos de Carne Asada', 'Tacos mexicanos rellenos de carne asada, cebolla, cilantro y limón.', '1 libra de carne asada, 1 cebolla picada, 1/2 taza de cilantro picado, 1 limón, Sal y pimienta, Tortillas de maíz', '1. Cocine la carne asada a la parrilla o a la plancha hasta que esté dorada. 2. Corte la carne en tiras. 3. Caliente las tortillas de maíz en una sartén o en el horno. 4. Rellene cada tortilla con carne asada, cebolla, cilantro y limón. 5. Sirva caliente.');
 
+/*Se crea la tabla de clientes llamada cliente... igual que la clase Cliente */
+CREATE TABLE recetasdecasa.comentario (
+  id_comentario INT NOT NULL AUTO_INCREMENT,
+  id_receta INT NOT NULL,
+  id_cliente INT NOT NULL,	
+  texto VARCHAR(250) NOT NULL,
+  FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente),
+  FOREIGN KEY (id_receta) REFERENCES cliente(id_receta),
+  PRIMARY KEY (`id_comentario`))
