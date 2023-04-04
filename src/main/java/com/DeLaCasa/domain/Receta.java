@@ -27,8 +27,7 @@ public class Receta implements Serializable{
     public Receta() {
     }
 
-    public Receta(long idReceta, String nombre, String descripcion, String ingredientes, String preparacion) {
-        this.idReceta = idReceta;
+    public Receta(String nombre, String descripcion, String ingredientes, String preparacion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.ingredientes = ingredientes;

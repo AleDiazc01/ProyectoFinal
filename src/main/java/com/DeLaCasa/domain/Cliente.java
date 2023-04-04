@@ -20,6 +20,7 @@ public class Cliente implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_cliente")
     private long idCliente;
     private String nombre;
     private String apellidos;
@@ -27,7 +28,6 @@ public class Cliente implements Serializable{
     private String contra;
 
     public Cliente(long idCliente, String nombre, String apellidos, String correo, String contra) {
-        this.idCliente = idCliente;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;

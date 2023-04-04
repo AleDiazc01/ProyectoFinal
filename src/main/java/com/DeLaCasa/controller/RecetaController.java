@@ -1,9 +1,10 @@
-package com.DeLaCasa.domain;
+package com.DeLaCasa.controller;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+import com.DeLaCasa.domain.Receta;
 import com.DeLaCasa.service.ClienteService;
 import com.DeLaCasa.service.RecetaService;
 import java.util.Arrays;
@@ -27,13 +28,6 @@ public class RecetaController {
     private RecetaService recetaService;
 
 
-    @GetMapping("/")
-    public String inicio(Model model) {
-        var recetas = recetaService.getReceta();
-        model.addAttribute("recetas", recetas);
-
-        return "index";
-    }
 
     @GetMapping("/receta/nuevo")
     public String recetaNuevo(Receta receta) {
@@ -67,15 +61,6 @@ public class RecetaController {
         return "recetas_presentacion";
     }
     
-                @GetMapping("/sobre_web")
-    public String sobre() {
-        return "sobre_web";
-    }
-    
-                    @GetMapping("/iniciar_sesion")
-    public String iniciarSesion() {
-        return "iniciar_sesion";
-    }
     
         @GetMapping("/receta/mostrar/{idReceta}")
     public String mostrarReceta(Receta receta, Model model) {
@@ -85,12 +70,6 @@ public class RecetaController {
     }
     
      
-    
-       @GetMapping("/registro")
-    public String registro() {
-        return "registro";
-    } 
-    
     @GetMapping("/receta/buscador")
     public String buscadorReceta(Model model) {
         
